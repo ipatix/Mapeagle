@@ -1,4 +1,4 @@
-﻿namespace Mapeagle {
+﻿namespace Mapeagle.UserInterface {
     partial class MainForm {
         /// <summary>
         /// Required designer variable.

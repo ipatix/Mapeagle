@@ -23,14 +23,21 @@
 
 using System;
 using System.Text;
-using System.Drawing;
-using System.Windows.Forms;
+using System.Diagnostics;
 using System.Collections.Generic;
 
-namespace Mapeagle.UserInterface {
-    public partial class MainForm : Form {
-        public MainForm() {
-            InitializeComponent();
-        }
+namespace Mapeagle.MapClasses.Interface {
+    /// <summary>
+    /// Defines an interface which makes
+    /// a class or structure undoable. This
+    /// means that an old value is put on a
+    /// list and can be restored when using
+    /// the undo function in the main form.
+    /// The advantage is that we don't need
+    /// any slow methods in the rom class.
+    /// </summary>
+    public interface IUndoable {
+        void Undo();
+        void Redo();
     }
 }

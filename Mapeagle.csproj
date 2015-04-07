@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapClasses\Interface\IUndoable.cs" />
+    <Compile Include="MapClasses\Manager.cs" />
+    <Compile Include="MapClasses\Safety\ClassState.cs" />
+    <Compile Include="MapClasses\Safety\ErrorLog.cs" />
     <Compile Include="UserControls\MapBanner.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -62,6 +66,12 @@
     </Compile>
     <Compile Include="UserControls\MenuPaint.cs" />
     <Compile Include="UserControls\NativeMethods.cs" />
+    <Compile Include="UserInterface\LoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\LoadForm.Designer.cs">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +90,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserInterface\LoadForm.resx">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,13 +111,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MapClasses\Graphics\" />
-    <Folder Include="MapClasses\Interface\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Collapsed.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Expanded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gamecube\Gamecube.csproj">
+      <Project>{d6df25e1-163e-49f1-a742-dae40e349bc3}</Project>
+      <Name>Gamecube</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

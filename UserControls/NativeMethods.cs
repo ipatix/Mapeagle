@@ -67,5 +67,53 @@ namespace Mapeagle.UserControls {
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+    
+        [StructLayout(LayoutKind.Sequential)]
+        public struct POINT
+        {
+            public Int32 x;
+            public Int32 y;
+
+            public POINT(Int32 x, Int32 y) { this.x = x; this.y = y; }
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct SIZE
+        {
+            public Int32 cx;
+            public Int32 cy;
+
+            public SIZE(Int32 cx, Int32 cy) { this.cx = cx; this.cy = cy; }
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct BLENDFUNCTION
+        {
+            public byte BlendOp;
+            public byte BlendFlags;
+            public byte SourceConstantAlpha;
+            public byte AlphaFormat;
+        }
+
+        [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
+        public static extern IntPtr GetDC(IntPtr hWnd);
+
+        [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
+        public static extern IntPtr CreateCompatibleDC(IntPtr hDC);
+
+        [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
+        public static extern bool DeleteDC(IntPtr hdc);
+
+        [DllImport("gdi32.dll", ExactSpelling = true)]
+        public static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
+
+        [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
+        public static extern bool DeleteObject(IntPtr hObject);
+
+        [DllImport("User32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr ReleaseDC(IntPtr handle, IntPtr hDC);
+
+        [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
+        public static extern bool UpdateLayeredWindow(IntPtr hwnd, IntPtr hdcDst, ref POINT pptDst, ref SIZE psize, IntPtr hdcSrc, ref POINT pprSrc, Int32 crKey, ref BLENDFUNCTION pblend, Int32 dwFlags);
     }
 }

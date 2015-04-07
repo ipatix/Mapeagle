@@ -22,15 +22,18 @@
 // put the output file (.dll) into your bin folder.
 
 using System;
-using System.Text;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Collections.Generic;
+using System.IO;
+using System.Xml;
 
-namespace Mapeagle.UserInterface {
-    public partial class MainForm : Form {
-        public MainForm() {
-            InitializeComponent();
-        }
+namespace Mapeagle.MapClasses.Safety {
+    /// <summary>
+    /// Defines an enum which indicates
+    /// if the class is constructed or
+    /// destructed or threw an error.
+    /// </summary>
+    public enum ClassState {
+        Error,
+        Disposed,
+        Initialized
     }
 }
