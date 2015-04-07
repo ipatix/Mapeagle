@@ -23,39 +23,39 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Mapheader");
-            this.mapMenuStrip1 = new Mapeagle.UserControls.MapMenuStrip();
-            this.mapToolStrip1 = new Mapeagle.UserControls.MapToolStrip();
+            this.mapMenu = new Mapeagle.UserControls.MapMenuStrip();
+            this.mapStrip = new Mapeagle.UserControls.MapToolStrip();
             this.listPanel = new Mapeagle.UserControls.MapPanel();
             this.mapView = new Mapeagle.UserControls.MapTreeView();
             this.headingList = new Mapeagle.UserControls.MapBanner();
             this.mapFunctions = new Mapeagle.UserControls.MapTabControl();
+            this.tabMap = new System.Windows.Forms.TabPage();
+            this.blockPanel = new Mapeagle.UserControls.MapPanel();
             this.tabMovement = new System.Windows.Forms.TabPage();
             this.tabEvents = new System.Windows.Forms.TabPage();
             this.tabPokemon = new System.Windows.Forms.TabPage();
             this.tabData = new System.Windows.Forms.TabPage();
-            this.tabMap = new System.Windows.Forms.TabPage();
-            this.blockPanel = new Mapeagle.UserControls.MapPanel();
             this.listPanel.SuspendLayout();
             this.mapFunctions.SuspendLayout();
             this.tabMap.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mapMenuStrip1
+            // mapMenu
             // 
-            this.mapMenuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.mapMenuStrip1.Name = "mapMenuStrip1";
-            this.mapMenuStrip1.Size = new System.Drawing.Size(808, 24);
-            this.mapMenuStrip1.TabIndex = 0;
-            this.mapMenuStrip1.Text = "mapMenuStrip1";
+            this.mapMenu.Location = new System.Drawing.Point(0, 0);
+            this.mapMenu.Name = "mapMenu";
+            this.mapMenu.Size = new System.Drawing.Size(808, 24);
+            this.mapMenu.TabIndex = 0;
+            this.mapMenu.Text = "mapMenuStrip1";
             // 
-            // mapToolStrip1
+            // mapStrip
             // 
-            this.mapToolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.mapToolStrip1.Name = "mapToolStrip1";
-            this.mapToolStrip1.Size = new System.Drawing.Size(808, 25);
-            this.mapToolStrip1.TabIndex = 1;
-            this.mapToolStrip1.Text = "mapToolStrip1";
+            this.mapStrip.Enabled = false;
+            this.mapStrip.Location = new System.Drawing.Point(0, 24);
+            this.mapStrip.Name = "mapStrip";
+            this.mapStrip.Size = new System.Drawing.Size(808, 25);
+            this.mapStrip.TabIndex = 1;
+            this.mapStrip.Text = "mapToolStrip1";
             // 
             // listPanel
             // 
@@ -75,15 +75,12 @@
             this.mapView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mapView.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
             this.mapView.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mapView.HideSelection = false;
             this.mapView.Indent = 19;
             this.mapView.ItemHeight = 16;
-            this.mapView.Location = new System.Drawing.Point(0, 40);
+            this.mapView.Location = new System.Drawing.Point(0, 34);
             this.mapView.Name = "mapView";
-            treeNode1.Name = "nodeheader";
-            treeNode1.Text = "Mapheader";
-            this.mapView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.mapView.Size = new System.Drawing.Size(228, 442);
+            this.mapView.Size = new System.Drawing.Size(228, 446);
             this.mapView.TabIndex = 2;
             // 
             // headingList
@@ -114,6 +111,28 @@
             this.mapFunctions.SelectedIndex = 0;
             this.mapFunctions.Size = new System.Drawing.Size(588, 484);
             this.mapFunctions.TabIndex = 4;
+            // 
+            // tabMap
+            // 
+            this.tabMap.BackColor = System.Drawing.Color.Transparent;
+            this.tabMap.Controls.Add(this.blockPanel);
+            this.tabMap.Location = new System.Drawing.Point(4, 33);
+            this.tabMap.Name = "tabMap";
+            this.tabMap.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMap.Size = new System.Drawing.Size(580, 447);
+            this.tabMap.TabIndex = 1;
+            this.tabMap.Text = "Map";
+            // 
+            // blockPanel
+            // 
+            this.blockPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.blockPanel.AutoScroll = true;
+            this.blockPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(128)))), ((int)(((byte)(155)))));
+            this.blockPanel.Location = new System.Drawing.Point(308, -1);
+            this.blockPanel.Name = "blockPanel";
+            this.blockPanel.Size = new System.Drawing.Size(273, 449);
+            this.blockPanel.TabIndex = 5;
             // 
             // tabMovement
             // 
@@ -155,42 +174,20 @@
             this.tabData.TabIndex = 4;
             this.tabData.Text = "Daten";
             // 
-            // tabMap
-            // 
-            this.tabMap.BackColor = System.Drawing.Color.Transparent;
-            this.tabMap.Controls.Add(this.blockPanel);
-            this.tabMap.Location = new System.Drawing.Point(4, 33);
-            this.tabMap.Name = "tabMap";
-            this.tabMap.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMap.Size = new System.Drawing.Size(580, 447);
-            this.tabMap.TabIndex = 1;
-            this.tabMap.Text = "Map";
-            // 
-            // blockPanel
-            // 
-            this.blockPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.blockPanel.AutoScroll = true;
-            this.blockPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(128)))), ((int)(((byte)(155)))));
-            this.blockPanel.Location = new System.Drawing.Point(308, -1);
-            this.blockPanel.Name = "blockPanel";
-            this.blockPanel.Size = new System.Drawing.Size(273, 449);
-            this.blockPanel.TabIndex = 5;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 529);
             this.Controls.Add(this.listPanel);
-            this.Controls.Add(this.mapToolStrip1);
-            this.Controls.Add(this.mapMenuStrip1);
+            this.Controls.Add(this.mapStrip);
+            this.Controls.Add(this.mapMenu);
             this.Controls.Add(this.mapFunctions);
-            this.MainMenuStrip = this.mapMenuStrip1;
+            this.MainMenuStrip = this.mapMenu;
             this.MinimumSize = new System.Drawing.Size(824, 568);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Mapeagle";
             this.listPanel.ResumeLayout(false);
             this.mapFunctions.ResumeLayout(false);
             this.tabMap.ResumeLayout(false);
@@ -201,8 +198,8 @@
 
         #endregion
 
-        private UserControls.MapMenuStrip mapMenuStrip1;
-        private UserControls.MapToolStrip mapToolStrip1;
+        private UserControls.MapMenuStrip mapMenu;
+        private UserControls.MapToolStrip mapStrip;
         private UserControls.MapPanel listPanel;
         private UserControls.MapTreeView mapView;
         private UserControls.MapBanner headingList;

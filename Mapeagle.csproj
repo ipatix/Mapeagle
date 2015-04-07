@@ -97,7 +97,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MapClasses\" />
+    <Folder Include="MapClasses\Graphics\" />
+    <Folder Include="MapClasses\Interface\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Collapsed.png" />

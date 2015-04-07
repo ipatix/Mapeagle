@@ -117,19 +117,13 @@ namespace Mapeagle.UserControls {
 
             Point arrow = new Point(bounds.X-12,bounds.Y+2); bounds.Width+=32;
             Boolean selected = e.State.HasFlag(TreeNodeStates.Selected);
-            Rectangle selection = new Rectangle(bounds.X,bounds.Y,Width-bounds.X-1,bounds.Height-2);
+            Rectangle selection = new Rectangle(0,bounds.Y,Width,bounds.Height);
                   
 
             if (selected) {
                 // Node is beeing pressed by the user
                 // thus drawing a selection around it.
-                Int32 style = NativeMethods.GetWindowLong(Handle, -16);
-                if ((style & NativeMethods.WS_VSCROLL) != 0) {
-                    selection.Width -= 17;
-                }
-
-                e.Graphics.FillRectangle(MenuPaint.TreeNdSl, selection);
-                e.Graphics.DrawRectangle(MenuPaint.TreeNdBd, selection);
+                e.Graphics.FillRectangle(MenuPaint.ToolBgLo, selection);
 
                 if (e.Node.Parent != null) {
                     if (e.Node.Parent.Parent != null) {
