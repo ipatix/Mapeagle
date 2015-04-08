@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,10 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapClasses\Data\WildPokeEntry.cs" />
+    <Compile Include="MapClasses\Data\WildPokeTable.cs" />
+    <Compile Include="MapClasses\Graphics\Block.cs" />
+    <Compile Include="MapClasses\Graphics\ByPalette.cs" />
+    <Compile Include="MapClasses\Graphics\Overworld.cs" />
+    <Compile Include="MapClasses\Graphics\Palette.cs" />
+    <Compile Include="MapClasses\Graphics\Tile.cs" />
+    <Compile Include="MapClasses\Graphics\Tileset.cs" />
     <Compile Include="MapClasses\Interface\IUndoable.cs" />
     <Compile Include="MapClasses\Manager.cs" />
     <Compile Include="MapClasses\Safety\ClassState.cs" />
     <Compile Include="MapClasses\Safety\ErrorLog.cs" />
+    <Compile Include="MapClasses\Safety\Plain.cs" />
     <Compile Include="UserControls\MapBanner.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -109,9 +118,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MapClasses\Graphics\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Collapsed.png" />
   </ItemGroup>
